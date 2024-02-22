@@ -43,7 +43,8 @@
 					<span style="width:18%; display:inline-block;">
 						<a href="?do=login">會員登入</a>
 					</span>
-					<div class="">
+				</div>
+				<div class="">
 						<?php
 						$do = $_GET['do'] ?? 'main';
 						$file = "./front/{$do}.php";
@@ -54,7 +55,6 @@
 						}
 						?>
 					</div>
-				</div>
 			</div>
 		</div>
 		<div id="bottom">
