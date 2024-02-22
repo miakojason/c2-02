@@ -1,4 +1,12 @@
-<div class="nav">目前位置:首頁>分類網誌><span class="type">健康新知</span></div>
+<style>
+    .news-list {
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+<div class="nav">
+    目前位置:首頁>分類網誌><span class="type">健康新知</span>
+</div>
 <fieldset class="types">
     <legend>分類網誌</legend>
     <a class="type-item" data-type="1">健康新知</a>
@@ -20,17 +28,17 @@
     })
 
     function getList(type) {
-        $.post("./api/get_list.php", {
+        $.get("./api/get_list.php", {
             type
         }, (list) => {
-            $(".list-items").html(list);
+            $(".list-items").html(list)
             $(".article").hide();
             $(".list-items").show();
         })
     }
 
     function getNews(id) {
-        $.post("./api/get_news.php", {
+        $.get("./api/get_news.php", {
             id
         }, (news) => {
             $(".article").html(news);
