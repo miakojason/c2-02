@@ -37,11 +37,25 @@
 				<a class="blo" href="?do=que">問卷調查</a>
 			</div>
 			<div class="hal" id="main">
-				<div>
+				<div style="display: flex;">
 					<marquee>請民眾踴躍投稿電子報，讓電子報成為大家相
 						互交流、分享的園地！詳見最新文章</marquee>
 					<span style="width:18%; display:inline-block;">
-						<a href="?do=login">會員登入</a>
+						<?php
+						if (!isset($_SESSION['user'])) {
+							echo "<a href='?do=login'>會員登入</a>";
+						} else {
+						?>
+							歡迎,<?= $_SESSION['user']; ?>
+							<button onclick="location.href='./api/logout.php'">登出</button>
+							<?php
+							if ($_SESSION['user'] == 'admin') {
+							?>
+								<button onclick="location.href='./back.php'">管理</button>
+						<?php
+							}
+						}
+						?>
 					</span>
 				</div>
 				<div class="">
