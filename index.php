@@ -45,16 +45,16 @@
 					</span>
 				</div>
 				<div class="">
-						<?php
-						$do = $_GET['do'] ?? 'main';
-						$file = "./front/{$do}.php";
-						if (file_exists($file)) {
-							include $file;
-						} else {
-							include_once "./front/main.php";
-						}
-						?>
-					</div>
+					<?php
+					$do = $_GET['do'] ?? 'main';
+					$file = "./front/{$do}.php";
+					if (file_exists($file)) {
+						include $file;
+					} else {
+						include_once "./front/main.php";
+					}
+					?>
+				</div>
 			</div>
 		</div>
 		<div id="bottom">
