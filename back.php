@@ -37,8 +37,9 @@
 				<a class="blo" href="?do=que">問卷調查</a>
 			</div>
 			<div class="hal" id="main">
-				<div>
-
+				<div style="display:flex">
+					<marquee>請民眾踴躍投稿電子報，讓電子報成為大家相
+						互交流、分享的園地！詳見最新文章</marquee>
 					<span style="width:18%; display:inline-block;">
 						<a href="?do=login">會員登入</a>
 					</span>
