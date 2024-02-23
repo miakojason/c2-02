@@ -1,0 +1,2 @@
+uncaught PDOEXception:SQLSTATE[42s22]:COLUMN not found:1054 UNknow column '1' in 'where clause' in D:\web10\api\db.php:38 stack trace: #0 D;\web10\api\db.php(38):PDO->exec('update `total`....')#1D;\web10\api\db.php(138):DB->save(Array)#2
+D:\web10\index.php(1):inclunde_once('D:\\web\\api\\db...')#3{main}thrown in D:web10\api\db.php on line 38

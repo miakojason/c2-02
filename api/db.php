@@ -25,7 +25,7 @@ class DB
                 $sql = "update `$this->table` set ";
                 $tmp = $this->a2s($array);
                 $sql .= join(",", $tmp);
-                $sql .= " where `id`='{$array['id']}'";
+                $sql .= " where `id` = '{$array['id']}'";
             } else {
                 echo "空的";
             }
@@ -114,6 +114,7 @@ class DB
     {
         return $this->math('min', $col, $where, $other);
     }
+    
 }
 function dd($array)
 {
@@ -125,14 +126,14 @@ function to($url)
 {
     header("location:$url");
 }
+
 $Total = new DB('total');
 $News = new DB('news');
 $User = new DB('user');
 $Que = new DB('que');
 $Log = new DB('log');
-
 if (!isset($_SESSION['visited'])) {
-    if ($Total->count(['date' => date("Y-m-d")]) > 0) {
+    if ($Total->count(['date' => date('Y-m-d')]) > 0) {
         $total = $Total->find(['date' => date('Y-m-d')]);
         $total['total']++;
         $Total->save($total);
