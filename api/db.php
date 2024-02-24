@@ -61,8 +61,8 @@ class DB
         } else {
             echo "x type";
         }
-        $row = $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
-        return $row;
+        return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+
     }
     private function sql_all($sql, $array, $other)
     {
