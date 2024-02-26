@@ -26,8 +26,6 @@ class DB
                 $tmp = $this->a2s($array);
                 $sql .= join(",", $tmp);
                 $sql .= " where `id` = '{$array['id']}'";
-            } else {
-                echo "空的";
             }
         } else {
             $sql = "insert into `$this->table` ";
@@ -62,7 +60,6 @@ class DB
             echo "x type";
         }
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
-
     }
     private function sql_all($sql, $array, $other)
     {
@@ -114,7 +111,6 @@ class DB
     {
         return $this->math('min', $col, $where, $other);
     }
-    
 }
 function dd($array)
 {
@@ -126,7 +122,6 @@ function to($url)
 {
     header("location:$url");
 }
-
 $Total = new DB('total');
 $News = new DB('news');
 $User = new DB('user');
@@ -134,12 +129,12 @@ $Que = new DB('que');
 $Log = new DB('log');
 if (!isset($_SESSION['visited'])) {
     if ($Total->count(['date' => date('Y-m-d')]) > 0) {
-        $total = $Total->find(['date' => date('Y-m-d')]);
-        $total['total']++;
-        $Total->save($total);
+        $row = $Total->find(['date' => date('Y-m-d')]);
+        $row['total']++;
+        $Total->save($row);
     } else {
         $Total->save(['total' => 1, 'date' => date('Y-m-d')]);
     }
+
     $_SESSION['visited'] = 1;
 }
-?>
