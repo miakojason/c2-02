@@ -9,5 +9,5 @@ if(isset($_POST['id'])){
             $News->save($new);
         }
     }
-    to("../back.php?do=news");
 }
+to("../back.php?do=news");
